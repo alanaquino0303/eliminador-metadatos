@@ -18,7 +18,7 @@ Soporta imágenes (JPG/PNG/WEBP/GIF), limpieza básica de PDF y limpieza experim
 ## Estructura del repositorio
 
 ```
-/ (root)
+/ eliminador-metadatos
 ├─ index.html        # Interfaz principal (carga librerías externas).
 ├─ script.js         # Lógica de upload y limpieza.
 ├─ style.css         # Estilos y modo oscuro.
@@ -37,7 +37,7 @@ Soporta imágenes (JPG/PNG/WEBP/GIF), limpieza básica de PDF y limpieza experim
 
 ## Visita la página web
 
-[Presiona aquí.](https://tusitio.com)
+[Presiona aquí.](https://alanaquino0303.github.io/eliminador-metadatos/)
 
 ---
 
