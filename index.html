@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Eliminador de Metadatos</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Tipografía -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Íconos Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Encabezado -->
+  <header>
+    <div class="logo">Eliminador de Metadatos</div>
+    <button id="dark-mode-toggle" aria-label="Alternar modo oscuro" tabindex="0">🌙</button>
+  </header>
+
+  <!-- Sección principal -->
+  <section id="metadata-cleaner">
+    <h1>Eliminador de Metadatos</h1>
+    <p>Sube tu archivo, elimina los metadatos ocultos y descarga una versión limpia y segura. Soporta imágenes, PDF y experimentalmente, audio y video con ffmpeg.wasm.</p>
+
+    <div class="cleaner-container">
+      <!-- Input presente y oculto de forma accesible (NO display:none) -->
+      <div class="upload-area" id="upload-area" role="button" aria-label="Área de subida" tabindex="0">
+        <i class="fa-solid fa-cloud-arrow-up fa-3x"></i>
+        <p>Arrastra tu archivo aquí o haz clic para seleccionarlo.</p>
+        <!-- Ojo: No usar display:none para evitar bloqueo en algunos WebViews.
+             Se oculta con posicionamiento y opacity para que el .click() funcione. -->
+        <input type="file" id="file-input" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;opacity:0;">
+      </div>
+
+      <div id="file-preview" class="hidden fade-container" aria-live="polite">
+        <p><strong>Archivo seleccionado:</strong> <span id="file-name" class="file-name"></span></p>
+        <p id="file-type-info" style="margin-top:6px;font-size:0.9em;color:#666;"></p>
+
+        <div id="preview-area" style="margin-top:12px; display:flex; gap:12px; align-items:center;">
+          <img id="img-preview" alt="Miniatura" style="max-width:120px; display:none; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.12)" />
+          <div style="text-align:left;">
+            <div><strong>Tamaño original:</strong> <span id="size-before">—</span></div>
+            <div><strong>Tamaño limpio:</strong> <span id="size-after">—</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="controls" style="margin-top:15px;">
+        <button id="clean-btn" class="hidden">Eliminar Metadatos</button>
+        <button id="download-btn" class="hidden fade-container">Descargar Archivo Limpio</button>
+      </div>
+
+      <!-- Barra de progreso -->
+      <div id="progress-container" class="hidden" style="margin-top:18px;">
+        <div id="progress-label" style="font-size:0.95em;margin-bottom:6px;color:#333;">Progreso:</div>
+        <div id="progress-bar" style="width:100%;height:12px;background:#eee;border-radius:8px;overflow:hidden;">
+          <div id="progress-fill" style="height:100%;width:0%;background:#FF0000;transition:width 0.2s"></div>
+        </div>
+        <div id="progress-text" style="font-size:0.85em;margin-top:6px;color:#666;">—</div>
+      </div>
+
+      <!-- Soporte formatos -->
+      <div style="margin-top:18px; text-align:left;">
+        <h3 style="margin:6px 0 8px 0;">Formatos</h3>
+        <ul id="format-list" style="list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px;">
+          <li><strong>Imágenes:</strong> <span class="tag supported">Soportado</span> (JPG, PNG, WEBP, GIF).</li>
+          <li><strong>PDF:</strong> <span class="tag partial">Parcial</span> (metadata común limpiada).</li>
+          <li><strong>Audio (MP3, WAV):</strong> <span class="tag experimental">Experimental</span> (ffmpeg.wasm).</li>
+          <li><strong>Vídeo (MP4, MOV):</strong> <span class="tag experimental">Experimental</span> (ffmpeg.wasm).</li>
+          <li><strong>DOCX / Otros:</strong> <span class="tag unsupported">No soportado</span></li>
+        </ul>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Pie de página -->
+  <footer>
+    <p>© 2025 Alan Aquino. Eliminador de Metadatos.</p>
+  </footer>
+
+  <!-- Modal -->
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-content">
+      <span id="modal-close" role="button" aria-label="Cerrar" tabindex="0">&times;</span>
+      <p id="modal-message"></p>
+    </div>
+  </div>
+
+  <!-- Librerías -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/piexifjs/1.0.6/piexif.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@ffmpeg/ffmpeg@0.11.8/dist/ffmpeg.min.js"></script>
+
+  <!-- Script principal -->
+  <script src="script.js"></script>
+</body>
+</html>
