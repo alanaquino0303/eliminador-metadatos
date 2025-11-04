@@ -15,7 +15,7 @@ Soporta imágenes (JPG/PNG/WEBP/GIF), limpieza básica de PDF y limpieza experim
 
 ---
 
-## Estructura del repositorio
+## Estructura del proyecto
 
 ```
 / eliminador-metadatos
