@@ -1,7 +1,6 @@
 # Eliminador de Metadatos
 
-**Eliminador de Metadatos** es una aplicación web ligera para eliminar metadatos de archivos antes de compartirlos.  
-Soporta imágenes (JPG/PNG/WEBP/GIF), limpieza básica de PDF y limpieza experimental de audio y video mediante **ffmpeg.wasm**. Pensada para **privacidad**, **facilidad de uso** y **accesibilidad**.
+Alicación web ligera para eliminar metadatos de archivos antes de compartirlos. Soporta imágenes (JPG/PNG/WEBP/GIF), limpieza básica de PDF y limpieza experimental de audio y video mediante **ffmpeg.wasm**. Pensada para **privacidad**, **facilidad de uso** y **accesibilidad**.
 
 ---
 
@@ -22,7 +21,7 @@ Soporta imágenes (JPG/PNG/WEBP/GIF), limpieza básica de PDF y limpieza experim
 ├─ index.html        # Interfaz principal (carga librerías externas).
 ├─ script.js         # Lógica de upload y limpieza.
 ├─ style.css         # Estilos y modo oscuro.
-├─ README.md         # Documentación.
+└─ README.md         # Documentación.
 ```
 
 ---
