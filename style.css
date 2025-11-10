@@ -16,7 +16,7 @@ body {
 
 /* Encabezado */
 header {
-  background: #FF0000;
+  background: #FF8000;
   color: white;
   padding: 15px 20px;
   display: flex;
@@ -48,7 +48,7 @@ section {
 }
 section h1 {
   margin-bottom: 20px;
-  color: #FF0000;
+  color: #FF8000;
   font-weight: 600;
 }
 
@@ -64,7 +64,7 @@ section h1 {
 
 /* Área de subida */
 .upload-area {
-  border: 2px dashed #FF0000;
+  border: 2px dashed #FF8000;
   border-radius: 12px;
   padding: 40px 20px;
   cursor: pointer;
@@ -73,13 +73,13 @@ section h1 {
   position: relative;
 }
 .upload-area:focus {
-  box-shadow: 0 0 0 4px rgba(255,0,0,0.08);
+  box-shadow: 0 0 0 4px rgba(255,128,0,0.08);
 }
 .upload-area:hover {
-  background: rgba(255, 0, 0, 0.05);
+  background: rgba(255, 128, 0, 0.05);
 }
 .upload-area i {
-  color: #FF0000;
+  color: #FF8000;
   margin-bottom: 10px;
 }
 .upload-area p {
@@ -106,7 +106,7 @@ section h1 {
 
 /* Botones */
 button {
-  background: #FF0000;
+  background: #FF8000;
   color: white;
   border: none;
   padding: 12px 20px;
@@ -118,7 +118,7 @@ button {
   margin-top: 15px;
 }
 button:hover {
-  background: #cc0000;
+  background: #cc6600;
   transform: translateY(-2px);
 }
 .hidden {
@@ -138,7 +138,7 @@ button:hover {
 
 /* Pie de página */
 footer {
-  background: #FF0000;
+  background: #FF8000;
   color: white;
   text-align: center;
   padding: 20px 0;
@@ -180,21 +180,21 @@ footer {
 .modal.hidden {
   display: none;
 }
-.modal-content p.success { color: #d32f2f; }
-.modal-content p.error { color: #d32f2f; }
+.modal-content p.success { color: #d35400; }
+.modal-content p.error { color: #d35400; }
 
 /* Modo oscuro */
 .dark-mode {
   background: #1e1e1e;
   color: #eaeaea;
 }
-.dark-mode header { background: #cc0000; }
-.dark-mode section h1 { color: #ff9999; }
+.dark-mode header { background: #cc6600; }
+.dark-mode section h1 { color: #ffbf99; }
 .dark-mode .cleaner-container { background: #2c2c2c; color: #eaeaea; }
-.dark-mode footer { background: #cc0000; }
+.dark-mode footer { background: #cc6600; }
 .dark-mode .modal-content { background: #2c2c2c; color: #eaeaea; }
-.dark-mode .upload-area { border-color: #ff9999; }
-.dark-mode .upload-area:hover { background: rgba(255, 153, 153, 0.1); }
+.dark-mode .upload-area { border-color: #ffbf99; }
+.dark-mode .upload-area:hover { background: rgba(255, 191, 153, 0.1); }
 
 /* Responsividad */
 @media (max-width: 768px) {
@@ -240,7 +240,7 @@ footer {
   overflow: hidden;
 }
 #progress-fill {
-  background: #FF0000;
+  background: #FF8000;
   height: 100%;
   width: 0%;
   transition: width 0.3s ease;
@@ -260,4 +260,4 @@ footer {
   #format-list {
     grid-template-columns: 1fr;
   }
-}
+  }
