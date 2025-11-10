@@ -428,4 +428,4 @@ function mostrarModal(mensaje, exito = true) {
 function cerrarModal() {
   modal.classList.add("hidden");
   modal.setAttribute("aria-hidden", "true");
-}
+    }
